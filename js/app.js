@@ -32,6 +32,18 @@ function Router($stateProvider){
     templateUrl: "js/ng-views/show.html",
     controller: "GrumbleShowController",
     controllerAs: "vm"
-  });
+  })
+  .state("grumbleCreate", {
+    url: "/grumbles",
+    controller: "GrumbleCreateController",
+    controllerAs: "vm",
+    templateUrl: "js/ng-views/create.html"
+  })
+}
 
+angular.module("grumblr")
+.controller("GrumbleCreateController", [GrumbleCreateControllerFunction])
+
+function GrumbleCreateControllerFunction() {
+  console.log("Create function works")
 }
